@@ -1,0 +1,12 @@
+---
+classes:
+- profile_base
+
+dev_packages:
+- git
+
+php:
+- php
+- php-mysql
+- php-gd
+- php-curl
