@@ -2,7 +2,9 @@
 
 class profile_web {
 
-   class { '::apache': }
+   class { '::apache': 
+   default_vhost => false, 
+}
 ####Include php module
     include apache::mod::php
   
