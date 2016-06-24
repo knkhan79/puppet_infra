@@ -5,16 +5,19 @@ class profile_web {
    class { '::apache': }
 ####Include php module
     include apache::mod::php
-
-    firewall { '100 allow http and https access':
-    dport   => [80, 443],
-    proto  => tcp,
-    action => accept,
+  
+  $myvhost = hiera('apache::vhost', {})
+  create_resources('apache::vhost', $myvhost)
+  
+     firewall { '100 allow http and https access':
+     dport   => [80, 443],
+     proto  => tcp,
+     action => accept,
   }
-$packages = hiera('php')
-package {$packages:
-   ensure => installed,
-   notify => Service['httpd'],
+    $packages = hiera('php')
+    package {$packages:
+     ensure => installed,
+     notify => Service['httpd'],
    }
 
 }
