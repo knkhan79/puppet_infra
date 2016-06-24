@@ -1,6 +1,6 @@
 ---
 classes:
-  - profile_web
+  - role_webserver
 
 apache::vhost:
   'client.example.com':
