@@ -1,3 +1,11 @@
 ---
 classes:
   - profile_web
+
+apache::vhost:
+  'client.example.com':
+    servername: 'client.example.com'
+    docroot: '/var/www/html/client.example.com'
+    port: '80'
+    docroot_owner: 'apache'
+    docroot_group: 'apache'
