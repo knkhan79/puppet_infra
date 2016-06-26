@@ -9,3 +9,4 @@ apache::vhost:
     port: '80'
     docroot_owner: 'apache'
     docroot_group: 'apache'
+    override: 'All'
